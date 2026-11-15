@@ -1,0 +1,108 @@
+{
+  "task": "Exploratory systolic and diastolic BP regression",
+  "validation": "3-fold GroupKFold; each fold holds out complete subjects",
+  "dataset": {
+    "record_count": 170,
+    "subject_count": 3,
+    "subject_counts": {
+      "C1G0001": 64,
+      "C1G0002": 49,
+      "C1G0003": 57
+    },
+    "source": "NASA EMA MR001G Campaign 1 Tilt",
+    "join_keys": [
+      "Subject",
+      "Test_Phase",
+      "BR_Day",
+      "Date",
+      "Position",
+      "Minutes"
+    ],
+    "features": [
+      "Minutes",
+      "CO",
+      "TPR",
+      "SV",
+      "Position",
+      "Test_Phase"
+    ],
+    "targets": [
+      "SBP",
+      "DBP"
+    ],
+    "excluded_mislabelled_table": "The file named _HR has a DBP column and its values duplicate the DBP table; it was excluded as an input."
+  },
+  "targets": {
+    "SBP": {
+      "model_file": "systolic_bp_extra_trees.joblib",
+      "unit": "mmHg",
+      "oof_mae": 26.37560616232131,
+      "oof_rmse": 29.414465019425414,
+      "mean_baseline_oof_mae": 20.936253825580245,
+      "folds": [
+        {
+          "held_out_subjects": [
+            "C1G0001"
+          ],
+          "records": 64,
+          "mae": 21.673566983162196,
+          "mean_baseline_mae": 17.753832547169807
+        },
+        {
+          "held_out_subjects": [
+            "C1G0003"
+          ],
+          "records": 57,
+          "mae": 29.062904904003236,
+          "mean_baseline_mae": 30.212855146716354
+        },
+        {
+          "held_out_subjects": [
+            "C1G0002"
+          ],
+          "records": 49,
+          "mae": 29.39100369681753,
+          "mean_baseline_mae": 14.301737223815142
+        }
+      ]
+    },
+    "DBP": {
+      "model_file": "diastolic_bp_extra_trees.joblib",
+      "unit": "mmHg",
+      "oof_mae": 5.175252434561466,
+      "oof_rmse": 6.9291718588470355,
+      "mean_baseline_oof_mae": 6.425197353793901,
+      "folds": [
+        {
+          "held_out_subjects": [
+            "C1G0001"
+          ],
+          "records": 64,
+          "mae": 4.032175603063433,
+          "mean_baseline_mae": 5.422169811320757
+        },
+        {
+          "held_out_subjects": [
+            "C1G0003"
+          ],
+          "records": 57,
+          "mae": 6.384646148346354,
+          "mean_baseline_mae": 9.60751436112405
+        },
+        {
+          "held_out_subjects": [
+            "C1G0002"
+          ],
+          "records": 49,
+          "mae": 5.2614049964009695,
+          "mean_baseline_mae": 4.033395176252319
+        }
+      ]
+    }
+  },
+  "limitations": [
+    "Only three unique subjects are present; held-out metrics are highly uncertain.",
+    "Inputs are NASA tilt-test CO, TPR, SV, posture, test phase and minute, not ECG or PPG.",
+    "These models are not suitable for medical decisions or real-time patient monitoring."
+  ]
+}
