@@ -1,0 +1,2 @@
+timestamp,astronaut_id,heart_rate_bpm,systolic_mmhg,diastolic_mmhg,spo2_percent,temperature_c,sleep_hours,activity_minutes,device_status,model_inputs
+2026-11-14T17:00:00,A-001,71,120,77,98,36.8,7.5,40,connected,"{""blood_pressure"":{""Minutes"":5,""CO"":5,""TPR"":18,""SV"":70,""Position"":""Supine"",""Test_Phase"":""POST_TEST""}}"
