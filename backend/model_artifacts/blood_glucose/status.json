@@ -1,0 +1,12 @@
+{
+  "status": "not_trained",
+  "reason": "The supplied archives contain no labeled blood-glucose measurements paired with sensor inputs. A supervised glucose model cannot be trained or evaluated from these files without inventing target labels.",
+  "needed_data": "Paired glucose reference measurements (with units and timestamps) and the corresponding permitted sensor inputs, for enough independent participants.",
+  "searched_sources": [
+    "NASA health monitoring archive and nested EMA tables",
+    "PTB-XL and MIT-BIH ECG archives",
+    "BIDMC and PTT pulse/PPG archives",
+    "temperature archive"
+  ],
+  "model_file": null
+}
