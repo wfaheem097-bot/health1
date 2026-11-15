@@ -1,0 +1,24 @@
+{
+  "task": "PTT PPG fine-tuning for activity-level heart rate and SpO2",
+  "targets": [
+    "HR",
+    "SpO2"
+  ],
+  "split": "Subject-independent; 5 held-out subjects",
+  "train_subjects": 14,
+  "validation_subjects": 3,
+  "test_subjects": 5,
+  "train_windows": 1260,
+  "test_windows": 450,
+  "test_errors": {
+    "HR": {
+      "mae": 18.447189331054688,
+      "rmse": 22.0667667388916
+    },
+    "SpO2": {
+      "mae": 0.7910659313201904,
+      "rmse": 0.9567225575447083
+    }
+  },
+  "limitations": "Targets are only activity start/end readings repeated over windows; weak labels, exploratory only."
+}

@@ -1,0 +1,28 @@
+{
+  "task": "BIDMC PPG waveform regression",
+  "targets": [
+    "HR",
+    "SpO2",
+    "RESP"
+  ],
+  "window_seconds": 10,
+  "split": "Record-independent 60/20/20",
+  "train_windows": 1488,
+  "validation_windows": 528,
+  "test_windows": 528,
+  "test_errors": {
+    "HR": {
+      "mae": 5.057896614074707,
+      "rmse": 7.171672344207764
+    },
+    "SpO2": {
+      "mae": 2.1260838508605957,
+      "rmse": 2.3910179138183594
+    },
+    "RESP": {
+      "mae": 2.1478848457336426,
+      "rmse": 3.345034599304199
+    }
+  },
+  "limitations": "Research model; reference values are from a small ICU dataset; not clinically validated."
+}
