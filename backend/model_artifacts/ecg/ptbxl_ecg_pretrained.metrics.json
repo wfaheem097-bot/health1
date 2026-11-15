@@ -1,0 +1,23 @@
+{
+  "task": "PTB-XL 5 diagnostic superclasses; patient-independent official folds",
+  "classes": [
+    "CD",
+    "HYP",
+    "MI",
+    "NORM",
+    "STTC"
+  ],
+  "train_records": 17073,
+  "validation_records": 2145,
+  "test_records": 2157,
+  "macro_roc_auc": 0.8219747542861228,
+  "class_roc_auc": {
+    "CD": 0.8266954419218893,
+    "HYP": 0.7475195875042802,
+    "MI": 0.7912586977428296,
+    "NORM": 0.8858510273764113,
+    "STTC": 0.8585490168852031
+  },
+  "f1_at_0_5": 0.465353863892038,
+  "limitations": "Research model; not clinically validated."
+}

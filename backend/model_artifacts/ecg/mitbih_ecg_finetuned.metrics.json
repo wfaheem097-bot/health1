@@ -1,0 +1,52 @@
+{
+  "task": "MIT-BIH AAMI beat classification; transferred PTB-XL ECG convolutional backbone",
+  "classes": [
+    "N",
+    "S",
+    "V",
+    "F",
+    "Q"
+  ],
+  "train_beats": 11568,
+  "validation_beats": 8492,
+  "test_beats": 49658,
+  "test_macro_f1": 0.4358354345060963,
+  "test_accuracy": 0.8905916468645535,
+  "train_class_counts": {
+    "N": 8000,
+    "S": 857,
+    "V": 2307,
+    "F": 396,
+    "Q": 8
+  },
+  "test_predicted_class_counts": {
+    "N": 42595,
+    "S": 2143,
+    "V": 4211,
+    "F": 708,
+    "Q": 1
+  },
+  "per_class": {
+    "N": {
+      "support": 44207,
+      "recall": 0.9235188997217635
+    },
+    "S": {
+      "support": 1837,
+      "recall": 0.20685900925421882
+    },
+    "V": {
+      "support": 3219,
+      "recall": 0.8909599254426841
+    },
+    "F": {
+      "support": 388,
+      "recall": 0.38917525773195877
+    },
+    "Q": {
+      "support": 7,
+      "recall": 0.0
+    }
+  },
+  "limitations": "Record-separated research benchmark; not clinically validated."
+}
